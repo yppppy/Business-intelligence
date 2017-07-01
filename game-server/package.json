@@ -1,9 +1,11 @@
 {
-    "name":"HelloWorld",
-    "version":"0.0.1",
-    "private":false,
-    "dependencies":{
-        "pomelo":"2.2.5"
-    }
+  "name": "HelloWorld",
+  "version": "0.0.1",
+  "private": false,
+  "dependencies": {
+    "pomelo": "2.2.5"
+  },
+  "devDependencies": {
+    "redis": "^2.7.1"
+  }
 }
-

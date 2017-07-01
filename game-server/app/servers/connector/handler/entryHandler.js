@@ -11,14 +11,12 @@ var Handler = function(app) {
   this.app = app;
   self = this; 
 };
-
 Handler.prototype.login = function(msg, session, next) {
-	console.log("SSSSSSS");
-	console.log('收到消息,uid='+msg.id+",nicheng="+msg.name);
+	console.log('收到消息,uid='+msg.id);
 	let sessionid = session.id;
 	let uid = 'u'+msg.id;
 	session.bind(uid);
-	session.uname=msg.name;
+	//session.uname=msg.nicheng;
 	console.log('serverId='+this.app.get('serverId'));
 	channel = pomelo.app.get('channelService').getChannel('area',true);
 	channel.add(uid, this.app.get('serverId'));
@@ -39,7 +37,7 @@ Handler.prototype.login = function(msg, session, next) {
  * @return {Void}
  */
 Handler.prototype.entry = function(msg, session, next) {
-	console.log('收到消息:'+msg.name);
+	console.log('收到消息:'+msg.uname);
 	// console.log(pomelo);
 	// console.log('-------------------------------');
 	// channel = pomelo.app.get('channelService').getChannel('area',true);
